@@ -215,7 +215,17 @@
     
     font-size: 24px;
     font-weight: 300;
-    list-style-type: circle;
+    list-style-type: none;
+}
+.subtext li {
+    position: relative; /* Position the list items relative to adjust the dash position */
+    padding-left: 20px; /* Add padding to maintain indentation */
+}
+
+.subtext li::before {
+    content: "- "; /* Add a dash before each list item */
+    position: absolute; /* Position the dash absolutely */
+    left: 0; /* Align the dash to the left of the list item */
 }
 .subsection1
 {
