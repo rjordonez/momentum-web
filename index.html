@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<header>
+<ul class="nav-list">
+    <li><img src="images/logo.png" class="img"></li>
+    <li>OUR STORY</li>
+    <li>CONTACT</li>
+    <li>UNDERSTANDING NIL</li>
+    <li class="auth-buttons">
+        <div class="login-button">LOG IN</div>
+        <div class="signup-button">SIGN UP</div>
+    </li>
+</ul>
+<header>
+<body>
+<div class="landing-page">
+<img src="images/blurline.png" class="blurline">
+<div class ="title-text">
+    <p>BUILD YOUR BRAND. BUILD YOUR WEALTH.</p>
+    <em>BUILD YOUR MOMENTUM.</em>
+    <div class="image-container">
+        <img src="images/athlete-1.png" class="moving-image" id="athlete-1">
+        <img src="images/athlete-2.png" class="moving-image" id="athlete-2">
+        <img src="images/athlete-3.png" class="moving-image" id="athlete-3">
+        <img src="images/athlete-4.png" class="moving-image" id="athlete-4">
+    </div>
+    
+</div>
+
+<script>
+  
+  document.addEventListener("DOMContentLoaded", function() {
+            const container = document.querySelector('.image-container');
+            const images = document.querySelectorAll('.moving-image');
+            const speed = 1; // Adjust the speed as needed
+
+            function moveImages() {
+                images.forEach((image) => {
+                    const currentLeft = parseFloat(window.getComputedStyle(image).left);
+                    image.style.left = `${currentLeft + speed}px`;
+
+                    // If the image moves off the right side, reposition it to the left side
+                    if (currentLeft > container.offsetWidth) {
+                        image.style.left = `-${image.offsetWidth}px`;
+                    }
+                });
+            }
+
+            function initialize() {
+                images.forEach((image, index) => {
+                    image.style.position = 'absolute';
+                    image.style.left = `${index * (image.offsetWidth + 20)}px`; // Initial position with spacing
+                });
+
+                setInterval(moveImages, 10); // Move images every 10ms
+            }
+
+            initialize();
+
+            // Refresh the page on window resize
+            window.addEventListener('resize', () => {
+                location.reload();
+            });
+        });
+    </script>
+</div>
+<div class="section-1">
+
+<div class="supportText">
+<img src="images/short-logo.png" class="short-logo">
+<p>With NIL bringing more attention and money to college athletes <br>
+    than ever before, it’s time these athletes, brands, and institutions get <br>
+    the support they need to  navigate this dynamic market. </p>
+    <ul class="redirectories">
+        <li class="redirect-button" id="athlete-button"><div class="skew-fix">I'M AN ATHLETE</div></li>
+        <li class="redirect-button" id="brand-button"><div class="skew-fix">I'M A BRAND</div></li>
+        <li class="redirect-button" id="university-button"><div class="skew-fix">I'M A UNIVERSITY</div></li>
+    </ul>
+</div>
+
+</div>
+<div class="section-2">
+    <h1>GIVING ATHLETES A NEW LEVEL OF AGENCY AND ACCESS.</h1>
+    <p>The Momentum approach is threefold</p>
+    <div class="subsection1">
+    <div class= "bold-text">Create and mediate lasting
+        athlete-brand connections</div>
+    <ul class="subtext">
+        <li>Help student athletes navigate
+            NIL and gain financial literacy</li>
+        <li> Creating an organized database of brands and 
+            athletes to catalyze fitting partnerships</li>
+        <li> Mediating discourse and reviewing contracts 
+            to ensure success on both sides</li>
+    </ul>
+</div>
+    <div class="subsection2">
+    <div class= "bold-text">Help student athletes navigate
+        NIL and gain financial literacy</div>
+        <ul class="subtext">
+            <li>Distilling the ins and outs of NIL into a simple 
+                and digestable format </li>
+            <li>Educating athletes on how to build their brand
+                and manage their wealth</li>
+            <li>Gamifying and simplifying financial education
+                to encourage athlete participation </li>
+        </ul>
+    </div>
+    <div class="subsection3">
+    <div class= "bold-text">Provide integrated, intuitive
+        financial services to students</div>
+        <ul class="subtext">
+            <li>Offering in-house financial services including
+                accounts, metrics, and portfolio management  </li>
+            <li>Implementing rewards and perks for athletes who 
+                stay consistent in their use of the service</li>
+            <li>Create a lasting resource for all student athletes to
+                use after their time at universities </li>
+        </ul>
+    </div>
+</div>
+</body>
+<footer>
+    
+</footer>
+</html>
