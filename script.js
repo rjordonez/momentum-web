@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
     const container = document.querySelector('.image-container');
-    const images = document.querySelectorAll('.moving-image');
+    const allImages = Array.from(document.querySelectorAll('.moving-image'));
     const speed = 1; // Adjust the speed as needed
     let intervalId;
 
-    function moveImages() {
+    function moveImages(images) {
         images.forEach((image) => {
             const currentLeft = parseFloat(window.getComputedStyle(image).left);
             image.style.left = `${currentLeft + speed}px`;
@@ -17,12 +17,33 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function initialize() {
-        images.forEach((image, index) => {
+        const containerWidth = container.offsetWidth;
+        const visibleImages = [];
+        let totalWidth = 0;
+
+        allImages.forEach((image) => {
             image.style.position = 'absolute';
-            image.style.left = `${index * (image.offsetWidth + 20)}px`; // Initial position with spacing
+            if (totalWidth + image.offsetWidth <= containerWidth && visibleImages.length < 4) {
+                image.style.left = `${totalWidth}px`; // Initial position with spacing
+                visibleImages.push(image);
+                totalWidth += image.offsetWidth + 20; // Include spacing
+            } else {
+                image.style.left = `-${image.offsetWidth}px`;
+            }
         });
 
-        intervalId = setInterval(moveImages, 10); // Move images every 10ms
+        // Add an additional image if it fits
+        if (visibleImages.length < 4) {
+            const additionalImage = allImages[visibleImages.length];
+            if (additionalImage) {
+                additionalImage.style.left = `${totalWidth}px`;
+                visibleImages.push(additionalImage);
+            }
+        }
+
+        if (visibleImages.length > 0) {
+            intervalId = setInterval(() => moveImages(visibleImages), 10); // Move images every 10ms
+        }
     }
 
     function refreshScript() {
@@ -31,6 +52,10 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         if (window.innerWidth >= 768) {
             initialize();
+        } else {
+            allImages.forEach((image) => {
+                image.style.left = `-${image.offsetWidth}px`;
+            });
         }
     }
 
