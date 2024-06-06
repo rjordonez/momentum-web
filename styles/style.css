@@ -122,7 +122,6 @@
     position: absolute;
     vertical-align: text-bottom;
 }
-
 .blurline{
     align-items: center;
     text-align: center;
@@ -164,6 +163,7 @@
     padding: .4em 2.4em;
     border-radius: 8px;
     transform:skew(-40deg);
+    cursor: pointer;
 }
 
 .redirect-button:hover
