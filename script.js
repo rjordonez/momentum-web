@@ -169,3 +169,4 @@ function clearFields() {
     document.getElementById('adInfo').value = '';
     console.log("Fields cleared manually via button.");
 }
+
