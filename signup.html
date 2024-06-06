@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;700&display=swap" rel="stylesheet">
+    <title>Signup</title>
+    <link rel="stylesheet" href="styles/signup_styles.css"> <!-- Link to the new CSS file -->
+    
+</head>
+<body class="signup-page">
+    <header id="main-header">
+        
+        <div class="logo-left">
+            <a href="index.html"><img src="images/logo_darkgreen.png" alt="LOGO" /></a>
+        </div>
+    </header>
+    <main class="signup-form">
+        <div id="clickableLogo" style="background-image: url('images/logo_lightgreen.png');"></div>
+        <form id="signupForm" method="POST" onsubmit="submitAndClearForm(event);">
+            <h2>Sign Up</h2>
+            <input type="text" id="nameInput" name="name" placeholder="Name" required>
+            <input type="email" id="emailInput" name="email" placeholder="Email" required>
+            <select id="roleSelect" name="role" required>
+                <option value="">Select Role...</option>
+                <option value="University">University</option>
+                <option value="Brand">Brand</option>
+                <option value="Athlete">Athlete</option>
+            </select>
+            <div id="additionalInputs">
+                <!-- Additional inputs based on selected role -->
+            </div>
+            <input type="adInfo" id="adInfo" name="adInfo" placeholder="Additional Info">
+            <button type="submit">Join Waitlist</button>
+
+
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Momentvm | All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

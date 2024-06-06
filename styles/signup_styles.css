@@ -1,0 +1,152 @@
+*, *::before, *::after {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+
+body.signup-page {
+    height: 120%;
+    min-height: 120vh;
+    width: 100vw;
+    position: relative;
+    background-color: #121212;
+    color: white;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 200; 
+}
+
+body.signup-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../images/logo_lightgreen.png');
+    background-repeat: repeat;
+    background-size: 10vw;
+    background-position: center bottom;
+    -webkit-filter: brightness(15%); /* Prefix for iOS Safari */
+    filter: brightness(15%);
+    z-index: -1;
+}
+
+header#main-header .logo-left img {
+    opacity: 0; /* Was 0, assuming typo as it should likely be fully visible */
+}
+main.signup-form {
+    max-width: 400px;
+    margin:  auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding-top: 80px;
+}
+
+#clickableLogo {
+    position: absolute;
+    margin-top: 45px;
+    top: 20px;
+    left: 50%;
+    -webkit-transform: translateX(-50%); /* Safari and iOS browsers */
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.signup-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input and Select box styling */
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="adInfo"],
+.signup-form select {
+    width: 100%;
+    padding: 10px; /* Same padding for height consistency */
+    background-color: #fff; /* Consistent background */
+    border: 1px solid #ccc; /* Consistent border styling */
+    border-radius: 10px; /* Rounded corners */
+    margin-bottom: 15px; /* Consistent margin at the bottom */
+    font-family: 'Kanit', sans-serif; /* Uniform font family */
+    font-weight: 200; /* Consistent font weight */
+    color: #333; /* Text color */
+    text-align: center; /* Center text alignment */
+    box-sizing: border-box; /* Include padding and border in the width */
+    -webkit-appearance: none; /* Necessary to remove default styles in WebKit browsers */
+    -moz-appearance: none; /* Remove default styles in Firefox */
+    appearance: none; /* Remove default styles for other browsers */
+}
+
+/* Adding custom arrow using background-image for dropdown */
+.signup-form select {
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="%23333"><polygon points="6,7 14,7 10,11"></polygon></svg>'); /* SVG arrow */
+    background-position: right 10px center; /* Position the arrow on the right center */
+    background-repeat: no-repeat; /* No repeat for background */
+}
+
+
+.signup-form button {
+    
+    font-family: 'Kanit', sans-serif;
+    font-weight: 200;
+    padding: 10px; /* Ensure consistent padding */
+    background-color: #04AA6D;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+    margin-bottom: 15px; /* Consistent margin at the bottom */
+    box-sizing: border-box; /* Include padding and border in the width */
+    text-align: center; /* Center text alignment */
+}
+#roleSelect {
+    text-align-last: center;
+    -webkit-text-align-last: center; /* For Safari and Chrome */
+    -moz-text-align-last: center; /* For Firefox */
+}
+
+footer {
+    text-align: center;
+    color: grey;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 550px) {
+    body.signup-page {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    body.signup-page::before {
+        background-size: 20vw;
+    }
+    main.signup-form {
+        max-width: 100%;
+        margin: 20px;
+    }
+    .signup-form select {
+        
+        text-align: center; /* Center text alignment */
+        
+    }
+    
+}

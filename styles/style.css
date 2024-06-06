@@ -1,0 +1,407 @@
+.html,body
+{
+    background-color: black;
+    color:white;
+    font-family: kanit;
+    margin: 0;
+    padding: 0;
+    min-width: 800px;
+    overflow-x: hidden;
+}
+
+.nav-list
+{
+    background-color: black;
+    align-items: center;
+    display:flex;
+    justify-content: space-between;
+    font-weight: 300;
+    list-style-type:none;
+    padding: 0px 20px;
+    font-size: 15px;
+}
+.auth-buttons {
+    display: flex;
+    gap: 20px; /* Adjust the gap between the buttons as needed */
+    
+}
+#img
+{
+    height:20px;
+    width:auto;
+}
+.login-button
+{
+    background-color: rgb(1, 33, 1);
+    padding: 5px 20px;
+    border-radius: 5px;
+    border:1px solid #ADDABC
+}
+.signup-button
+{
+    background-color: #addabc;
+    padding: 5px 20px;
+    border-radius:5px;
+    border:1px solid white;
+    color: black;
+}
+
+.landing-page
+{
+    height:800px;
+    background: radial-gradient(ellipse, #003C44 , #00151B  80%);
+    font-size:7vh;
+    font-weight: 300;
+    
+}
+.title-text
+{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display:flex;
+    flex-direction: column;
+    height: 100%;
+}
+.landing-page p
+{
+    margin: 0;
+
+    z-index: 4;
+
+}
+.landing-page em
+{
+    color:#addabc;
+    z-index: 4;
+}
+.section-1 {
+    height: 300px;
+    background-color: #00151B;
+    font-size: 40px;    
+    overflow-x: hidden;
+    position: relative; /* Add this to position the pseudo-element correctly */
+}
+
+.section-1::after {
+    content: "";
+    display: block;
+    width: 70%;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.supportText 
+{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display:flex;
+    flex-direction: column;
+    height: 100%;
+    font-size: 0.5em;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+    z-index: 1;
+    min-width: 960px;
+    top:-400px;
+    vertical-align: top;
+    
+}
+
+.moving-image {
+    width: 450px;
+    height: auto;
+    position: absolute;
+    vertical-align: text-bottom;
+}
+
+.blurline{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display:flex;
+    position:absolute;
+    top:80px;
+    height:800px;
+    width:100%;
+    z-index: 3;
+    animation: fadeIn 3s;
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+.short-logo
+{
+    width: 60px;
+    opacity: 30%;
+}
+
+.redirectories
+{
+    align-items: center;
+    display:flex;
+    font-weight: 400;
+    list-style-type:none;
+    padding: 0px 20px;
+    font-size: 25px;
+    font-family: kanit;
+    gap:20px;
+    min-width: 820px;
+}
+.redirect-button
+{
+    background-color: #000405;
+    border: 2px solid #addabc;
+    padding: .4em 2.4em;
+    border-radius: 8px;
+    transform:skew(-40deg);
+}
+
+.redirect-button:hover
+{
+    animation: fadeIn 2s;
+}
+@keyframes fadeIn {
+    100% { opacity: 1; }
+    0% { opacity: 0.5; }
+  }
+.skew-fix
+{
+    font-size: 20px;
+    transform:skew(40deg);
+}
+.section-2
+{
+    height: 100%;
+    background-color: #00151B;
+    font-size: 40px;
+    margin-top: -20px;
+    padding: 40px;
+}
+.section-2 h1
+{
+    display:flex;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 30px;;
+    text-align: center;
+}
+.section-2 p
+{
+    display:flex;
+    justify-content: center;
+    margin-top: -20px;;
+    font-weight: 400;
+    font-size: 28px;
+    color: #ADDABC;
+}
+.bold-text
+{
+    font-weight: 400;
+    font-size: 26px;
+    color: #ADDABC;
+}
+.subtext
+{
+    
+    font-size: 24px;
+    font-weight: 300;
+    list-style-type: none;
+}
+.subtext li {
+    position: relative; /* Position the list items relative to adjust the dash position */
+    padding-left: 20px; /* Add padding to maintain indentation */
+}
+
+.subtext li::before {
+    content: "- "; /* Add a dash before each list item */
+    position: absolute; /* Position the dash absolutely */
+    left: 0; /* Align the dash to the left of the list item */
+}
+.subsection1
+{
+    align-items: left;
+    text-align: left;
+    display:flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left:47vw;
+    margin-top: 80px;
+}
+.subsection2
+{
+    margin-top: 80px;
+    width: 45%;
+}
+.subsection3
+{
+    margin-top: 80px;
+    align-items: left;
+    text-align: left;
+    display:flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left:47vw
+}
+
+/* Ensure full-screen menu is hidden on desktop */
+.full-screen-menu {
+    display: none;
+}
+
+/* Ensure full-screen menu can be closed by clicking outside */
+.full-screen-menu.show {
+    display: flex;
+    flex-direction: column;
+}
+/* Mobile Styles */
+@media (max-width: 768px) {
+    html, body {
+        min-width: 100%; /* Remove min-width for better mobile responsiveness */
+        font-size: 16px; /* Adjust base font size for mobile */
+    }
+
+    .nav-list {
+        display: flex;
+        justify-content: center; /* Center the logo */
+        padding: 10px;
+    }
+
+    .nav-list li:not(:first-child) {
+        display: none; /* Hide all list items except the first one which contains the logo */
+    }
+
+    .auth-buttons {
+        display: none; /* Hide the auth-buttons */
+    }
+
+
+    .full-screen-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        color: white;
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .full-screen-menu ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .full-screen-menu li {
+        margin: 20px 0;
+        font-size: 24px;
+    }
+
+    /* Styles for the full-screen menu when visible */
+    .full-screen-menu.show {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .image-container {
+        min-width: 100%;
+        top: -200px;
+    }
+
+    .moving-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .blurline {
+        height: 400px;
+        top: 40px;
+    }
+
+    .section-1 {
+        height: auto;
+        padding: 20px;
+        font-size: 24px;
+    }
+
+    .section-1::after {
+        width: 80%;
+    }
+
+    .supportText {
+        font-size: 1em;
+        padding: 20px;
+    }
+
+    .redirectories {
+        flex-direction: column;
+        font-size: 18px;
+        gap: 10px;
+        padding: 10px;
+        min-width: 100%;
+    }
+
+    .redirect-button {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .skew-fix {
+        font-size: 18px;
+    }
+
+    .section-2 {
+        padding: 20px;
+        font-size: 24px;
+    }
+
+    .section-2 h1 {
+        font-size: 24px;
+    }
+
+    .section-2 p {
+        font-size: 20px;
+    }
+
+    .bold-text {
+        font-size: 20px;
+    }
+
+    .subtext {
+        font-size: 20px;
+    }
+
+    .subsection1, .subsection2, .subsection3 {
+        width: 100%;
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .image-container {
+        visibility: hidden;
+    }
+
+    .blurline {
+        visibility: hidden;
+    }
+    .header
+    {
+        padding:0;
+        margin:0;
+        height: 30px;
+    }
+}
